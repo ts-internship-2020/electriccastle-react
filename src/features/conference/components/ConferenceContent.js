@@ -7,7 +7,7 @@ import Button from 'components/common/buttons/Button';
 import attendeeStatus from 'constants/attendeeStatus.js';
 
 const ConferenceContent = (props) => {
-    const { conference } = props
+    const { conference, onAttend } = props
     const { status, startDate, endDate, type, category } = conference
 
     const { t } = useTranslation()
@@ -35,7 +35,7 @@ const ConferenceContent = (props) => {
                 <Grid item xs={12}>
                     {showJoin && <Button right color="success" size={"sm"}>{t('Conferences.Join')}</Button>}
                     {showWithdraw && <Button right color="danger" size={"sm"}>{t('Conferences.Withdraw')}</Button>}
-                    {showAttend && <Button right color="info" size={"sm"}>{t('Conferences.Attend')}</Button>}
+                    {showAttend && <Button onClick={onAttend(conference?.id)} right color="info" size={"sm"}>{t('Conferences.Attend')}</Button>}
                 </Grid>
             </Grid>
         </Grid>
@@ -44,6 +44,7 @@ const ConferenceContent = (props) => {
 
 ConferenceContent.propTypes = {
     conference: PropTypes.object.isRequired,
+    onAttend: PropTypes.func
 }
 
 export default ConferenceContent;
