@@ -81,7 +81,8 @@
     "Edit": "Modifica",
     "Delete": "Sterge",
     "SuccessfullyAttended": "Felicitari! Veti putea participa la aceasta conferinta! Veti fi notificat cu 5 minute inainte de inceperea acesteia pentru a va putea inscrie",
-    "QRCodeMessage": "Veti putea participa la aceasta conferinta! Veti fi notificat cu 5 minute inainte de inceperea acesteia pentru a va putea inscrie. Folositi urmatorul cod pentru pentru a o accesa: "
+    "QRCodeMessage": "Veti putea participa la aceasta conferinta! Veti fi notificat cu 5 minute inainte de inceperea acesteia pentru a va putea inscrie. Folositi urmatorul cod pentru pentru a o accesa: ",
+    "SuccessfullyWithdrawn": "V-ati retras de la aceasta conferinta!"
   },
 
   "Conference": {

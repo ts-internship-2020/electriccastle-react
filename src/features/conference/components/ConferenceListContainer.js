@@ -25,8 +25,8 @@ const defaultPager = {
 const ConferenceListContainer = () => {
     const { t } = useTranslation();
     const addToast = useToast()
-    const [code, setCode] = useState("")
-    const [open, setOpenDialog] = useState(false)
+    const [ code, setCode ] = useState("")
+    const [ open, setOpenDialog ] = useState(false)
     const [ email ] = useEmail()
     const [ filters, setFilters ] = useState() //generateDefaultFilters()
     const [, setFooter] = useFooter()
@@ -46,6 +46,7 @@ const ConferenceListContainer = () => {
     const [withdraw] = useMutation(WITHDRAW_CONFERENCE_MUTATION, {
         onCompleted: () => {
             addToast(t("Conferences.SuccessfullyWithdrawn"), 'success')
+            refetch()
         },
         onError: error => addToast(error, 'error', false)
     })
@@ -98,7 +99,7 @@ const ConferenceListContainer = () => {
             conferenceId: conferenceId
         }
         withdraw({ variables: { input } })
-    }, [withdraw, email]);
+    }, [email, withdraw]);
 
     useEffect(() => () => setFooter(null), []); // eslint-disable-line react-hooks/exhaustive-deps
 
