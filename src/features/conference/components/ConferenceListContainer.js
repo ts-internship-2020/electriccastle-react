@@ -14,6 +14,7 @@ import { ATTEND_CONFERENCE_MUTATION } from '../mutations/AttendConference';
 import { useTranslation } from 'react-i18next';
 import DialogDisplay from 'components/common/dialogBox/DialogDisplay';
 import ConferenceCodeModal from './ConferenceCodeModal';
+import { WITHDRAW_CONFERENCE_MUTATION } from '../mutations/WithdrawConference';
 
 const defaultPager = {
     totalCount: 0,
@@ -41,6 +42,13 @@ const ConferenceListContainer = () => {
         },
         onError: error => addToast(error, 'error', false)
     });
+
+    const [withdraw] = useMutation(WITHDRAW_CONFERENCE_MUTATION, {
+        onCompleted: () => {
+            addToast(t("Conferences.SuccessfullyWithdrawn"), 'success')
+        },
+        onError: error => addToast(error, 'error', false)
+    })
     
     const [attend] = useMutation(ATTEND_CONFERENCE_MUTATION, {
         onCompleted: (data) => {
@@ -84,6 +92,14 @@ const ConferenceListContainer = () => {
         attend({ variables: { input } })
     }, [attend, email]);
 
+    const handleWithdraw = useCallback((conferenceId) => () => {
+        const input = {
+            attendeeEmail: email,
+            conferenceId: conferenceId
+        }
+        withdraw({ variables: { input } })
+    }, [withdraw, email]);
+
     useEffect(() => () => setFooter(null), []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
@@ -115,7 +131,7 @@ const ConferenceListContainer = () => {
     <ConferenceList
         conferences={data?.conferenceList?.values}
         onAttend={handleAttend}
-        //onWithdraw={handleWithdraw}
+        onWithdraw={handleWithdraw}
     />
     <DialogDisplay
         id="showQRCode"

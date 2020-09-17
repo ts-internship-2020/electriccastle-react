@@ -64,7 +64,8 @@
       "Save": "Salveaza",
       "AddSpeaker": "Adauga orator",
       "DeleteSpeaker": "Sterge orator"
-    }
+    },
+    "Congratulations": "Felicitari!"
   },
 
   "Conferences": {
@@ -78,7 +79,9 @@
     "Withdraw": "Retrage-te",
     "StatusNotSet": "Nu participi",
     "Edit": "Modifica",
-    "Delete": "Sterge"
+    "Delete": "Sterge",
+    "SuccessfullyAttended": "Felicitari! Veti putea participa la aceasta conferinta! Veti fi notificat cu 5 minute inainte de inceperea acesteia pentru a va putea inscrie",
+    "QRCodeMessage": "Veti putea participa la aceasta conferinta! Veti fi notificat cu 5 minute inainte de inceperea acesteia pentru a va putea inscrie. Folositi urmatorul cod pentru pentru a o accesa: "
   },
 
   "Conference": {
