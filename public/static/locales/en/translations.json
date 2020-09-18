@@ -120,5 +120,9 @@
     "Nationality": "Nationality",
     "Rating": "Rating",
     "MainSpeaker": "Main Speaker"
+  },
+
+  "MyConferences": {
+    "SavingSucceeded": "Your changes have been saved!"
   }
 }

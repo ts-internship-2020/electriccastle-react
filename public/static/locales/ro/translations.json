@@ -111,5 +111,9 @@
     "Nationality": "Nationalitate",
     "Rating": "Rating",
     "MainSpeaker": "Orator principal"
+  },
+
+  "MyConferences": {
+    "SavingSucceeded": "Modificarile au fost salvate!"
   }
 }

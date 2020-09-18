@@ -128,7 +128,7 @@ const ConferenceListContainer = () => {
     }
 
     return <>
-    <ConferenceFilters filters={filters} onApplyFilters={handleApplyFilters} />
+    <ConferenceFilters filters={filters} onApplyFilter={handleApplyFilters} />
     <ConferenceList
         conferences={data?.conferenceList?.values}
         onAttend={handleAttend}
